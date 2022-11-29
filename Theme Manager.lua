@@ -104,9 +104,7 @@ local ThemeManager = {} do
 
 		groupbox:AddButton('Load custom theme', function() 
 			self:ApplyTheme(Options.ThemeManager_CustomThemeList.Value) 
-		end)
-
-		groupbox:AddButton('Save custom theme', function() 
+		end):AddButton('Save custom theme', function() 
 			self:SaveCustomTheme(Options.ThemeManager_CustomThemeName.Value)
 
 			Options.ThemeManager_CustomThemeList.Values = self:ReloadCustomThemes()
