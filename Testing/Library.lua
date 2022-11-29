@@ -1565,9 +1565,10 @@ do
         local Container = Groupbox.Container;
 
         if not Info.Compact then
-            Library:CreateLabel({
+
+        local SliderTextLabel = Library:CreateLabel2({
                 Size = UDim2.new(1, 0, 0, 10);
-                TextSize = 14;
+                TextSize = 20;
                 Text = Info.Text .. ' ' .. Slider.Value .. Suffix;
                 TextXAlignment = Enum.TextXAlignment.Left;
                 TextYAlignment = Enum.TextYAlignment.Bottom;
@@ -1660,7 +1661,8 @@ do
                 DisplayLabel.Text = ''
                 -- DisplayLabel.Text = string.format('%s', Slider.Value .. Suffix)
             else
-                DisplayLabel.Text = ''
+
+                SliderTextLabel.Text = Info.Text .. ' ' .. Slider.Value .. Suffix;
                 -- DisplayLabel.Text = string.format('%s/%s', Slider.Value .. Suffix, Slider.Max .. Suffix);
             end
 
