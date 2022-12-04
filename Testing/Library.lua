@@ -2576,6 +2576,14 @@ function Library:CreateWindow(...)
             Parent = TabButton;
         });
 
+        Library:AddToRegistry(TabButtonLabel, {
+            if Tab:ShowTab() then
+                TextColor3 = 'AccentColor';
+            else
+                TextColor3 = Library.FontColor;
+            end
+        });
+
         local Highlight = Library:Create('Frame', {
             BackgroundColor3 = Library.AccentColor;
             BorderSizePixel = 0;
