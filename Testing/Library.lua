@@ -1560,16 +1560,14 @@ do
             Type = 'Slider';
         };
 
-        local Suffix = Info.Suffix or '';
         local Groupbox = self;
         local Container = Groupbox.Container;
 
         if not Info.Compact then
-
-        local SliderTextLabel = Library:CreateLabel2({
+            Library:CreateLabel({
                 Size = UDim2.new(1, 0, 0, 10);
-                TextSize = 20;
-                Text = Info.Text .. ' ' .. Slider.Value .. Suffix;
+                TextSize = 14;
+                Text = Info.Text;
                 TextXAlignment = Enum.TextXAlignment.Left;
                 TextYAlignment = Enum.TextYAlignment.Bottom;
                 ZIndex = 5;
@@ -1658,12 +1656,9 @@ do
             if Info.Compact then
                 DisplayLabel.Text = Info.Text .. ': ' .. Slider.Value .. Suffix
             elseif Info.HideMax then
-                DisplayLabel.Text = ''
-                -- DisplayLabel.Text = string.format('%s', Slider.Value .. Suffix)
+                DisplayLabel.Text = string.format('%s', Slider.Value .. Suffix)
             else
-
-                SliderTextLabel.Text = Info.Text .. ' ' .. Slider.Value .. Suffix;
-                -- DisplayLabel.Text = string.format('%s/%s', Slider.Value .. Suffix, Slider.Max .. Suffix);
+                DisplayLabel.Text = string.format('%s/%s', Slider.Value .. Suffix, Slider.Max .. Suffix);
             end
 
             local X = math.ceil(Library:MapValue(Slider.Value, Slider.Min, Slider.Max, 0, Slider.MaxSize));
@@ -2590,11 +2585,9 @@ function Library:CreateWindow(...)
             Parent = TabButton;
         });
 
-        --[[
         Library:AddToRegistry(Highlight, {
             BackgroundColor3 = 'AccentColor';
         });
-        ]]--
 
         local Blocker = Library:Create('Frame', {
             BackgroundColor3 = Library.MainColor2;
@@ -2655,6 +2648,7 @@ function Library:CreateWindow(...)
                 Tab:HideTab();
             end;
 
+            TabFrame.Visible = true;
             Blocker.BackgroundTransparency = 0;
             TabButton.BackgroundColor3 = Library.MainColor2;
             TabButtonLabel.TextColor3 = Library.AccentColor;
@@ -2664,6 +2658,7 @@ function Library:CreateWindow(...)
             Library.RegistryMap[TabButton].Properties.BackgroundColor3 = 'MainColor2';
             TabFrame.Visible = true;
         end;
+
 
         function Tab:HideTab()
             Blocker.BackgroundTransparency = 1;
