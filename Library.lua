@@ -2585,11 +2585,9 @@ function Library:CreateWindow(...)
             Parent = TabButton;
         });
 
-        --[[
         Library:AddToRegistry(Highlight, {
             BackgroundColor3 = 'AccentColor';
         });
-        ]]--
 
         local Blocker = Library:Create('Frame', {
             BackgroundColor3 = Library.MainColor2;
@@ -2650,6 +2648,7 @@ function Library:CreateWindow(...)
                 Tab:HideTab();
             end;
 
+            TabFrame.Visible = true;
             Blocker.BackgroundTransparency = 0;
             TabButton.BackgroundColor3 = Library.MainColor2;
             TabButtonLabel.TextColor3 = Library.AccentColor;
@@ -2659,6 +2658,7 @@ function Library:CreateWindow(...)
             Library.RegistryMap[TabButton].Properties.BackgroundColor3 = 'MainColor2';
             TabFrame.Visible = true;
         end;
+
 
         function Tab:HideTab()
             Blocker.BackgroundTransparency = 1;
