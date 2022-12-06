@@ -3006,7 +3006,7 @@ function Library:CreateWindow(...)
         Cursor.Thickness = 1;
         Cursor.Filled = true;
 
-        while Outer.Visible and ScreenGui.Parent do
+        while Outer.Visible do
             local mPos = Workspace.CurrentCamera:WorldToViewportPoint(Mouse.Hit.p);
 
             Cursor.Color = Library.AccentColor;
