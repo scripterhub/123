@@ -2314,7 +2314,7 @@ end;
 
 function Library:SetWatermark(Text)
     local X, Y = Library:GetTextBounds(Text, Enum.Font.Code, 14);
-    Library.Watermark.Size = UDim2.new(0, 242, 0, 24);
+    Library.Watermark.Size = UDim2.new(0, 262, 0, 24);
 
     Library.WatermarkText.Text = Text;
 end;
