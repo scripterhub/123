@@ -8,7 +8,7 @@ local ThemeManager = {} do
 		['Default'] 		= { 1, httpService:JSONDecode('{"FontColor":"BFBFBF","MainColor":"0F0F0F","AccentColor":"929667","SelectedTabColor":"101010","BackgroundColor":"1B1B1B","OutlineColor":"0B0B0B"}') },
 		['GameSense'] 		= { 2, httpService:JSONDecode('{"FontColor":"919191","MainColor":"101010","AccentColor":"9CB819","SelectedTabColor":"101010","BackgroundColor":"111111","OutlineColor":"2D2D2D"}') },
 		['Comet.pub'] 		= { 3, httpService:JSONDecode('{"FontColor":"5E5E5E","MainColor":"0F0F0F","AccentColor":"5D589D","SelectedTabColor":"1a191d","BackgroundColor":"0F0F0F","OutlineColor":"191919"}') },
-		['Tokyo Night'] 	= { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","SelectedTabColor":"1a1a29","BackgroundColor":"16161f","OutlineColor":"323232"}') },
+		['Tokyohook.cc'] 	= { 4, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"191925","AccentColor":"6759b3","SelectedTabColor":"1a1a29","BackgroundColor":"433e58","OutlineColor":"323232"}') },
 		['pandahook.cc'] 	= { 5, httpService:JSONDecode('{"FontColor":"AEAEAE","MainColor":"0F0F0F","AccentColor":"30406A","SelectedTabColor":"151515","BackgroundColor":"0F0F0F","OutlineColor":"171717"}') },
 	}
 
@@ -46,7 +46,7 @@ local ThemeManager = {} do
 	end
 
 	function ThemeManager:LoadDefault()		
-		local theme = 'Default'
+		local theme = 'Tokyohook.cc'
 		local content = isfile(self.Folder .. '/themes/default.txt') and readfile(self.Folder .. '/themes/default.txt')
 
 		local isDefault = true
